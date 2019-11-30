@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Manipulacion de Elementos</title>
+    <script src="jquery-3.4.1.js"></script>
+<style>
+div{width: 100px; height: 100px; background-color: teal; border: 2px solid lightblue; display: inline-block}
+</style>
+</head>
+<body>
+    <h2>-----Manipulacion de Elementos------</h2>
+    <h4>Metodo get</h4>
+    <p><span> Lorem ipsum dolor sit amet consectetur</span> adipisicing elit. <a href=""> Ab cupiditate</a> asperiores <b>  dolorem. Sapiente vero</b> fugit ratione deserunt aliquid dolorem minima, quo illo aperiam autem, asperiores maxime! Ut incidunt quia ipsam?</p>
+    <p>
+    <input type="text" id="txt" name="nombre" placeholder="nombre">
+</p>
+    <br>
+    Text: Extrae un texto plano. <br>
+    html: Obtiene la primera etiqueta html. <br>
+    val(): Obtiene el valor de una caja de texto.
+
+    <br>
+    <p>
+        <button class="button1">Text</button>
+        <button class="button2">Html</button>
+        <button class="button3">val()</button>
+    </p>
+    <script>
+    $(function(){
+
+        $(".button1").click(function(){
+            var cadena = "text():" + $("p").text();
+            alert(cadena);
+            });
+            
+
+            $(".button2").click(function(){
+            var cadena = "html():" + $("p").html();
+            alert(cadena);
+            });
+
+            $(".button3").click(function(){
+            var cadena = "val():" + $("#txt").val();
+            alert(cadena);
+            });
+            
+    })
+    </script>
+
+<h4>Metodo set</h4>
+    <p id="p1"><p>
+    <input type="text" id="txt1" name="nombre" placeholder="nombre">
+</p>
+    <br>
+    <br>
+    <p>
+        <button class="button11">Text</button>
+        <button class="button22">Html</button>
+        <button class="button33">val()</button>
+    </p>
+    <script>
+    $(function(){
+
+        $(".button11").click(function(){
+            $("#p1").text("Nuevo texto con el metodo set");
+            $(this).text("text()");
+            });
+            
+
+            $(".button22").click(function(){
+            var cadena = "<b>Hola Mundo</b> Bienvendi al curso de <a>frontend</a>"
+            $("#p1").html(cadena);
+
+            
+            });
+
+            $(".button33").click(function(){
+            $("#txt1").val("valor de prueba");
+            
+            });
+            
+    })
+    </script>
+<hr>
+<h4>on function() kalback</h4>
+    <p id="p1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim incidunt, aliquam recusandae nulla ducimus libero aspernatur nihil cum eaque harum laudantium pariatur beatae maxime omnis iusto quia ea quae vitae?<p>
+        <p id="p11"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam enim earum, aperiam, accusantium eveniet rem nisi esse reiciendis facere at vitae maxime beatae doloremque id incidunt dicta! Deserunt, minus eaque.</p>
+
+    <br>
+    <input type="text" id="txt3" name="nombre" placeholder="nombre">
+    <p>
+        <button class="button111">Text</button>
+        <button class="button22">Html</button>
+        <button class="button33">val()</button>
+    </p>
+    <script>
+    $(function(){
+
+        $(".button111").click(function(){
+            $("p").text(function(index,nuevotexto){
+                return "Texto Origina: "+  nuevotexto +" indice: "+index;
+            });
+            
+            });
+            $(".button22").click(function(){
+            $("p").html(function(index,nuevotexto){
+                return "HTML Origina: "+  nuevotexto +" indice: "+index;
+            });
+            
+            });
+            $(".button33").click(function(){
+            $("#txt3").val(function(index,nuevotexto){
+                return  nuevotexto +" - "+index;
+            });
+            
+            });
+            
+            
+    })
+    </script>
+
+<hr>
+<h4>APPEND() ---PREPEND()</h4>
+    
+<ul>
+<li>Elemento 1</li>
+<li>Elemento 2</li>
+</ul>
+        <button class="button111">append() - prepend()</button>
+        
+    </p>
+    <script>
+    $(function(){
+
+        $(".button111").click(function(){
+            $("ul").prepend("<li>Nuevo item inicio</li>")
+            $("ul").append("<li>Nuevo item final</li>")
+        });
+            
+    });
+    </script>
+
+<hr>
+<h4>after() ---before()</h4>
+ 
+<div >
+
+   
+</div><br>
+        <button class="buttonbox">after() - before()</button>
+        
+    </p>
+    <script>
+    $(function(){
+
+        $(".buttonbox").on({
+            click:function()
+            {
+                var div=$("div");
+                div.after("<div style='background-color:orange'> </div>");
+                div.before("<div style='background-color:red'> </div>");
+            }
+        });
+            
+    });
+    </script>
+
+<hr>
+<h4>REMOVE()</h4>
+ 
+<div id="box" >
+
+    texto suelto
+
+    <p>primer parrafo</p>
+    <p>segundo parrafo</p>
+</div><br>
+        <button class="remove">remove</button>
+        
+    </p>
+    <script>
+    $(function(){
+
+        $(".remove").on({
+            click:function()
+            {
+                var div=$("#box");
+                //div.empty(); //Elimina solo contenido
+                //div.remove();//elimina todo objeto
+                div.empty().slideUp(2500,function(){
+                    $(this).css("background-color","red");
+                }).slideDown(2500,function(){
+                    $(this).text("Nuevo texto");
+                });
+            }
+        });
+            
+    });
+    </script>
+
+</body>
+</html>

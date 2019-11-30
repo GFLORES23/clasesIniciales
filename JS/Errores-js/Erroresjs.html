@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TryCatch</title>
+
+</head>
+<body>
+    
+    <label for="numeros">Ingrese un numero entre el 10  -  100</label><br>
+    <input type="text" value="" name="numeros" id="numeros">
+    <button onclick="validarnumero()">Validar</button>
+
+   
+        <p id="error"></p>
+        </p>
+
+
+    <script>
+
+        function validarnumero(){
+                
+         try {
+            var numero = parseInt(document.getElementById("numeros").value);
+           
+            if(document.getElementById("numeros").value==" "){
+                    throw("Ingrese un numero!!!");
+                }
+            if(numero < 10 ){
+                    throw("Numero debe ser mayor que 10");
+                }
+                else{
+                    document.getElementById("error").innerHTML=numero;
+                }
+                if(numero > 100){
+                    throw("El numero tiene que ser menor a 100!!!")
+
+                }else{
+                    document.getElementById("error").innerHTML=numero;
+                }
+             
+        } catch (error ) {
+            document.getElementById("error").innerHTML=error;
+            
+        }
+        finally{
+                    document.getElementById("numeros").value="";
+                    document.getElementById("numeros").focus();
+                }
+       
+        }
+    </script>
+
+    <hr>
+    <h2>Reference error</h2>
+    <p id="redefence"></p>
+    <script>
+        var suma;
+        try {
+            suma = x+ 1200;
+
+        } catch (error) {
+                   document.getElementById("redefence").innerHTML= error.name+" " + error.message;
+        }
+            </script>
+
+<hr>
+<h2>Arrow</h2>
+
+<p id="mensaje"></p>
+<p id="mensaje2"></p>
+
+<script>
+
+mensaje = function(){
+    return "Bienvendio";
+}
+
+mensaje2=( n1,n2)=>( n1+n2);
+document.getElementById("mensaje").innerHTML=mensaje2(10,20);
+
+
+</script>
+
+<hr>
+
+
+<h2>Ejercicio 1 con Funciones Arrow </h2>
+
+<p id="respuestas"></p>
+
+<script>
+//https://www.universoformulas.com/matematicas/geometria/perimetro-triangulo/
+
+
+var aa=180;
+var bb=50;
+
+sumatotal=(a,b)=>(a+b);
+resta=(a,b)=>(a-b);
+multiplicacion=(a,b)=>(a*b);
+divicion=(a,b)=>(a/b);
+modulo=(a,b)=>(a%b);
+
+document.getElementById("respuestas").innerHTML= ("Suma: "+ sumatotal(aa,bb) + "<br>" +"Resta: "+ resta(aa,bb) + "<br>" +"multiplicacion: " +multiplicacion(aa,bb)+ "<br>" +"divicion: "+divicion(aa,bb)+ "<br>"  +"modulo: "+ modulo(aa,bb));
+
+</script>
+
+<hr>
+<h2>Ejercicio 2 con Funciones Arrow - Perimetro de un cuadrado</h2>
+
+<p id="areas"></p>
+
+<script>
+    var ladoa =30;
+    var ladob=30;
+    area = (a,b)=>a*b;
+    document.getElementById("areas").innerHTML="El area del Cuadrado es: "+area(ladoa,ladob)+"m";
+</script>
+
+<hr>
+<h2>Ejercicio 3 con Funciones Arrow - Perimetro de un Circulo</h2>
+
+<p id="areascirculo"></p>
+
+<script>
+    var radio =25;
+    
+    areacirculo = (a)=> ( 2 * Math.PI * radio).toFixed(2);
+    document.getElementById("areascirculo").innerHTML="El area del circulo es: "+areacirculo(radio);
+</script>
+
+
+
+<hr>
+<h2>Ejercicio 4 con Funciones Arrow - Perimetro de un Triangulo</h2>
+
+<p id="areatriangulo"></p>
+
+<script>
+    var alt=50;
+    var bas=50;
+    
+    
+perimetrotriangulos = (a,b)=>  (a + b +( Math.sqrt(Math.pow(a,2) + Math.pow(b,2)) )).toFixed(2);
+
+    document.getElementById("areatriangulo").innerHTML= "El area del Triangulo es: "+ perimetrotriangulos(alt,bas);
+</script>
+
+
+
+
+</body>
+</html>

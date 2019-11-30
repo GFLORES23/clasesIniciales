@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dates</title>
+</head>
+<body>
+    <p id="fecha"></p>
+    <script>
+
+var fecha = new Date();
+fecha.setFullYear(2050);
+fecha.setMonth(11);
+fecha.setDate(31);
+         //document.getElementById("fecha").innerHTML=("<br>"+"Mes de la fecha: " + fecha);
+
+        var mes=["Enero", "Febrero","Marzo","Abril","Mayo","Junio","JUlio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
+        var dias= ["Domingo","Lunes", "Martes","Miercoles","Jueves","Viernes","Sabado"];
+        
+        var cadena="";
+        cadena= cadena +"GetFullYear(): "+fecha.getFullYear()+ "</br>" ;
+        cadena= cadena +"GetMonth(): "+mes[fecha.getMonth()] + "</br>" ;
+        cadena= cadena +"GetDate(): "+fecha.getDate() + "</br>" ;
+        cadena= cadena +"GetDay(): "+dias[fecha.getDay()] + "</br>" ;
+        cadena= cadena +"GetHours()"+fecha.getHours() + "</br>" ;
+        cadena= cadena +"GetMinutes(): "+fecha.getMinutes() + "</br>" ;
+        cadena= cadena +"GetSeconds(): "+fecha.getSeconds() + "</br>" ;
+        cadena= cadena +"GetTime(): "+  fecha.getTime() + "</br>" ;
+         document.getElementById("fecha").innerHTML= cadena;
+
+        </script>
+
+
+<hr>
+
+<h2>Ejercicio 2 Obtener meses del año con el total de dias</h2>    
+<label for="anio">Ingrese un año:</label>
+<input type="number" id="anio" name="anio" onchange="diasdelmes(this)">
+<p id="meses"></p>
+<script>
+
+function diasdelmes(elemento){
+    var anio=parseInt(elemento.value);
+    var cadena2="";
+    var mes=["Enero", "Febrero","Marzo","Abril","Mayo","Junio","JUlio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
+    for(var i =0;i <= 11 ;i++){
+        var diasxmes = new Date(anio,i + 1,0);
+
+        cadena2 = cadena2 + " "+mes[i] + ":" + diasxmes.getDate()+"<br>";
+        
+    }
+    
+    document.getElementById("meses").innerHTML= "Año: "+ anio +"br"+ cadena2 ;
+} 
+</script>
+
+<hr>
+
+<h2>Ejercicio 3 años    bisiestos hasta el 2050</h2>    
+
+
+<table style="width: 100%">
+    <caption id="nombreMes" style="font-size: 1.5em ">
+        mes
+    </caption>
+    <thead>
+        <tr>
+            <th>Domingo</th>
+            <th>Lunes</th>
+            <th>Martes</th>
+            <th>Miercoles</th>
+            <th>Jueves</th>
+            <th>Viernes</th>
+            <th>Sabado</th>
+        </tr>
+        
+
+    </thead>
+    
+    
+<tbody id="diasMesCadena"> </tbody>
+    
+
+</table>
+
+<script>
+
+
+var mes = new Date(2019-9-0);
+
+var mesArray=["Enero", "Febrero","Marzo","Abril","Mayo","Junio","JUlio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
+
+
+document.getElementById("nombreMes").innerHTML= mesArray[mes.getMonth()];
+var diasMes = new Date(mes.getFullYear(),mes.getMonth() + 1,0);
+var diasdeSemana= mes.getDay();
+cacenaDias="<tr>";
+contador = 0;
+switch (diasdeSemana){
+    case 1:{cadena += "<td></td>";contador+=1;break; }
+    case 2:{cadena += "<td></td><td></td>";contador+=2;break; }
+    case 3:{cadena += "<td></td><td></td><td></td>";contador+=3;break; }
+    case 4:{cadena += "<td></td><td></td><td></td><td></td>";contador+=4;break; }
+    case 5:{cadena += "<td></td><td></td><td></td><td></td><td></td>";contador+=5;break; }
+    case 6:{cadena += "<td></td><td></td><td></td><td></td><td></td><td></td>";contador+=6;break; }
+}
+
+
+
+for(var dia =1 ; dia <= diasMes.getDate();dia++){
+    contador++;
+    cacenaDias=cacenaDias+ "<td>"+ dia +"</td>"; 
+     if(contador == 7){
+     
+     cacenaDias=cacenaDias + "</tr> <tr> "; 
+     contador=0;
+     
+     
+     +"</tr>";
+}
++"</tr>";
+}
+ document.getElementById("diasMesCadena").innerHTML=cacenaDias;
+</script>
+
+
+<hr>
+
+<h2>Ejercicio 4 calendario</h2>    
+
+<label for="anio2">Ingrese un año:</label>
+<input type="number" id="anio2" name="anio2" onchange="bisiesto(this)">
+<p id="bisiestos"></p>
+<script>
+
+function bisiesto(elemento1){
+
+    var anio=parseInt(elemento1.value);
+    var anioactual= (new Date()).getFullYear();
+    
+    var aniobisiestos=0;
+    var cadenaanio="";
+    var mes=["Enero", "Febrero","Marzo","Abril","Mayo","Junio","JUlio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
+
+    for(var i = anioactual ;i <= anio ;i++){
+        var diasfebrero = new Date(i, 2,0);
+        if(diasfebrero.getDate() == 29){
+            cadenaanio = cadenaanio + " "+ i +"<br>";
+            aniobisiestos++;
+        }
+                
+    }
+    document.getElementById("bisiestos").innerHTML= "Año: "+ anio +"<br>"+ cadenaanio + "<br>"+"Total de años bisiestos: "+aniobisiestos +"<br>"+"Total de años NO bisiestos: "+ (anio - anioactual - aniobisiestos) ;
+} 
+</script>
+
+
+
+</body>
+</html>

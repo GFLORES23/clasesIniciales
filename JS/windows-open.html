@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="AbrirVentana()">Abrir emergente</button>
+    <button onclick="cerrarVentana()"> Cerrar Ventana</button>
+
+    <script>
+        var ventana;
+        var ventana2;
+    function AbrirVentana(){
+        var configuracion ="menubar=yes";
+        configuracion = configuracion + "location=yes";
+        configuracion = configuracion + "resizable=no,";
+        configuracion = configuracion + "scrollbars=yes,";
+        configuracion = configuracion + "width=600,";
+        configuracion = configuracion + "height=600,";
+        configuracion = configuracion + "top=100,";
+        configuracion = configuracion + "left=200";
+        ventana= window.open("Classes-js.html","Ejemplo",configuracion);
+        ventana2= window.open("clases-getters-setters.html","Ejemplo",configuracion);
+    }
+
+    function cerrarVentana(){
+        ventana.close();
+        ventana2.close();
+
+    }
+    
+
+
+
+    </script>
+
+</body>
+</html>

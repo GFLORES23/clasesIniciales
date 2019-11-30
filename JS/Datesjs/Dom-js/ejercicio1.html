@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    div{
+        display: inline-block;
+        width: 150px;
+        height: 150px;
+        margin: 20px;
+    }
+    .caja1{
+        background-color: red;
+        
+    }
+    .caja2{
+        background-color: blue;
+
+    }
+    .caja3{
+        background-color: green;
+
+    }
+    </style>
+</head>
+<body >
+    <h2>CAMBIAR DE COLORES PASANDO EL CURSOR</h2>
+    <SECTIon>
+   <div class="caja1" onmouseout="cambiarcolordefondo('#ffffff')" onmouseover="cambiarcolordefondo(this.style.backgroundColor)" style="background-color: red"></div>
+   <div class="caja2" onmouseout="cambiarcolordefondo('#ffffff')" onmouseover="cambiarcolordefondo(this.style.backgroundColor)" style="background-color: blue"></div>
+   <div class="caja3" onmouseout="cambiarcolordefondo('#ffffff')" onmouseover="cambiarcolordefondo(this.style.backgroundColor)" style="background-color: green"></div>
+        
+</SECTIon>
+<script >
+cambiarcolordefondo=(color)=>{
+document.body.style.backgroundColor=color;
+}
+
+</script>
+</body>
+</html>

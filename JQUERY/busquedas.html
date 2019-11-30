@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="/transformaciones/JQUERY/jquery-3.4.1.js"></script>
+    <style>
+        .buscar {
+            color: green;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>Busquedas con jquery</h1>
+    <h3>First - last - find - eq(index) - filter - not</h3>
+
+    <div>
+        <p class="buscar">Mi primer pasrrafo</p>
+        <p class="buscar">Mi segundo pasrrafo</p>
+        <p class="not">Mi tercer pasrrafo</p>
+    </div>
+
+    <div>
+
+        <p class="not">Mi cuarto pasrrafo</p>
+        <p class="not">Mi quinto pasrrafo</p>
+    </div>
+    <div>
+
+        <p class="not">Mi cuarto pasrrafo</p>
+        <p class="buscar">Mi quinto pasrrafo</p>
+    </div>
+
+    <div>
+
+        <p class="not">Mi cuarto pasrrafo</p>
+        <p class="not">Mi quinto pasrrafo</p>
+    </div>
+
+    <div>
+
+        <p class="not">Mi cuarto pasrrafo</p>
+        <p class="not">Mi quinto pasrrafo</p>
+    </div>
+
+    <div>
+
+        <p class="not">MI ULTIMO PARRAFO</p>
+        <p>MI ULTIMO PARRAFO</p>
+    </div>
+    <button id="filter">filter</button>
+    <button id="not">not</button>
+</body>
+
+<script>
+
+
+
+    $(document).ready(function () {
+
+    /*
+    $("button").click(function(){
+    $("div").first().fadeOut().fadeIn(function(){
+        $(this).css("color","red");
+        $(this).find("p").text(function(){
+           return  $(this).text().toUpperCase();
+        });
+        
+    });
+
+
+
+    $("div").last().find("p").text(function(){
+        $(this).css({"background-color":"teal", "color":"white"
+        })
+        return $(this).text().toLowerCase();
+    })
+        $("p").eq(3).css({"color":"orange", "font-size":"2em"});
+
+});
+*/
+
+
+
+        $("button").first().click(function () {
+            $("p").filter(".buscar").css({ "color": "yellow" });
+        });
+
+        $("button").last().click(function () {
+            $("p").not(".buscar").css({ "color": "white", "background-color": "teal" });
+
+        });
+    });
+</script>
+
+</html>

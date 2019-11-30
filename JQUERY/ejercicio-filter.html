@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <script src="/transformaciones/JQUERY/jquery-3.4.1.js"></script>
+    <style>
+        table,
+        tr,
+        td {
+            border-collapse: collapse;
+            border: 1px solid blue;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="search" id="buscar" placeholder="buscar" />
+    <br /><br />
+    <table>
+        <thead>
+            <th>Nombres</th>
+            <th>Email</th>
+            <th>Celular</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Pedro Miranda</td>
+                <td>pedro@gmail.com</td>
+                <td>945215841</td>
+            </tr>
+            <tr>
+                <td>Juan Perez</td>
+                <td>juan@gmail.com</td>
+                <td>95865841</td>
+            </tr>
+            <tr>
+                <td>Sara Chavez</td>
+                <td>sarita@hotmail.com</td>
+                <td>958639841</td>
+            </tr>
+            <tr>
+                <td>Jhony Ocon</td>
+                <td>jocon@gmail.com</td>
+                <td>9586555441</td>
+            </tr>
+            <tr>
+                <td>Juan Sanchez</td>
+                <td>juan@gmail.com</td>
+                <td>95865841</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+<script>
+    $(document).ready(function () {
+        $("#buscar").on("keyup", function () {
+            var texto = $(this)
+                .val()
+                .toLowerCase();
+
+            $("table tbody tr").filter(function () {
+                if ( $(this)
+                        .text()
+                        .toLowerCase()
+                        .indexOf(texto) > -1
+                ) {
+
+                    $(this).show();
+
+                } else {
+                    
+                    $(this).hide();
+                    
+                }
+            });
+        });
+    });
+</script>
+
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <title>Bootstrap 4</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <style>
+        small {
+            color: firebrick;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col">
+                <h1 class="text-primary">Registrar</h1>
+            </div>
+        </div>
+        <div class="row">
+
+            <form action="" class="was-validated ">
+                <div class="form-group">
+                    <label for="nombre" class="mb-2 mr.sm-2">Nombre:</label>
+                    <input type="text" name="name" id="name" class="form-control mb-2 mr-sm-2" required>
+                    <div class="valid-feedback">Cambo valido</div>
+                    <div class="invalid-feedback">Dato requerido</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="dni" class="mb-2 mr-sm-2">dni:</label>
+                    <input type="text" name="dni" id="dni" class="form-control" required>
+                    <div class="valid-feedback">Datos valido</div>
+                    <span class="invalid-feedback">Dato requerido</span>
+                </div>
+                <div class=" form-group form-check">
+                    <label class="form-check-label mb-2 mr-mb-2">
+                        <input type="checkbox" name="recordar" checked class=" form-check-input">Recordar
+                    </label>
+                </div>
+                <div class=" form-group form-check mb-2 mr-sm-2">
+                    <label class="form-check-label ">
+                        <input type="checkbox" name="terminos" class=" form-check-input" required>Acepto terminos y
+                        condiciones
+                        <span class="valid-feedback">datos aceptados</span>
+                        <span class="invalid-feedback">Acepta los terminos y condiciones</span>
+                    </label>
+                </div>
+
+        </div>
+        <p><h1>Formularios Validados con JS</h1></p>
+        <div class="formgroup mb-2 mr-sm-2"></div>
+        <button type="submit" class="btn btn-success btn-sm">Regitrar</button>
+        </form>
+        <br><br><br><br>
+
+        <form action="" class="needs-validation" novalidate>
+            <div class="form-group">
+                <label for="nombre" class="mb-2 mr.sm-2">Nombre:</label>
+                <input type="text" name="name" id="name" class="form-control mb-2 mr-sm-2" required>
+                <div class="valid-feedback">Cambo valido</div>
+                <div class="invalid-feedback">Dato requerido</div>
+            </div>
+
+            <div class="form-group">
+                <label for="dni" class="mb-2 mr-sm-2">dni:</label>
+                <input type="text" name="dni" id="dni" class="form-control" required>
+                <div class="valid-feedback">Datos valido</div>
+                <span class="invalid-feedback">Dato requerido</span>
+            </div>
+            <div class=" form-group form-check">
+                <label class="form-check-label mb-2 mr-mb-2">
+                    <input type="checkbox" name="recordar" checked class=" form-check-input">Recordar
+                </label>
+            </div>
+            <div class=" form-group form-check mb-2 mr-sm-2">
+                <label class="form-check-label ">
+                    <input type="checkbox" name="terminos" class=" form-check-input" required>Acepto terminos y
+                    condiciones
+                    <span class="valid-feedback">datos aceptados</span>
+                    <span class="invalid-feedback">Acepta los terminos y condiciones</span>
+                </label>
+            </div>
+
+    </div>
+    <div class="formgroup mb-2 mr-sm-2"></div>
+    <button type="submit" class="btn btn-primary btn-sm">Regitrar</button>
+    </form>
+    </div>
+    </div>
+
+    <script>
+        (function () {
+            'use strick';
+            window.addEventListener('load', function () {
+                var forms = document.getElementsByClassName('needs-validation');
+                var validation = Array.prototype.filter.call(forms, function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (form.checkValidity() == false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add("was-validated");
+                    }, false);
+                }, false);
+            }, false);
+        })();
+    </script>
+</body>
+
+</html>

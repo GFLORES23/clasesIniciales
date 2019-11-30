@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <header>Mostrar yb Coultar Elementos</header>
+<div>
+        <button id="boton1" onmouseover="desaparecer(this)">Boton 1</button><br><br>
+        <button id="boton2" onmouseover="desaparecer(this)">Boton 2</button>
+
+        <p id="p1" onmouseover="desaparecer(this)">Esto es un parrafo</p>
+        <p id="p2" onmouseover="desaparecer(this)">Mostrar elementos</p>
+        <button onclick="mostrar()">Mostrar</button>
+    </div>
+
+    <script>
+        function desaparecer(elemento){
+           // elemento.style.visibility='hidden';
+            elemento.style.opacity=0;
+        }
+        function mostrar(){
+           /* boton1.style.visibility='visible';
+            boton2.style.visibility='visible'
+            p1.style.visibility='visible';
+            p2.style.visibility='visible';*/
+         
+            boton1.style.opacity=1;
+            boton2.style.opacity=1
+            p1.style.opacity=1;
+            p2.style.opacity=1;
+
+            boton1.innerHTML="<em>Elemento cambiado</em>"
+            p1.innerHTML="<ul><li>Elemento 1</li><li>Elemento 2</li><li>Elemento 3</li></ul>"
+            boton1.style.color="#ff0000";
+            p1.style.color="#00ff00";
+            p2.style.color='rgba(78,7,200,0.5)';
+        }
+    </script>
+    
+    <footer></footer>
+</body>
+</html>

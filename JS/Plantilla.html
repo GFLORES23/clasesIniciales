@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Menu</title>
+
+	<link 
+	href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600' 
+	rel='stylesheet' type='text/css'>
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" 
+	rel="stylesheet">
+
+
+	<style>
+
+		*, *:before, *:after 
+		{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box; 	/*El ancho incluye el borde*/
+		}
+
+		body, html 
+		{
+			height: 100%;
+			background-color: rgb(200, 200, 200);
+		}
+
+		.container {
+		  width: 100%;
+		  height: 100%;
+		}
+
+		.contenido {
+		  width: 90%;
+		  margin: 5px auto 0 auto;
+		  background-color: rgb(250, 250, 250);
+		  max-width: 1024px;
+		}
+
+		.contenido ul li {
+		  font-family: "Open Sans", sans-serif;
+		  font-size: 1rem;
+		  font-weight: 400;
+		  color: #333;
+		  display: inline-block;
+		  padding: 15px;
+		  position: relative;
+		}
+
+		.contenido ul li ul {
+		  display: none;
+		}
+
+		.contenido ul li:hover {
+		  cursor: pointer;
+		  background-color: #f2f2f2;
+		}
+
+		.contenido ul li:hover ul {
+		  display: block;
+		  margin-top: 15px;
+		  width: 200px;
+		  left: 0;
+		  position: absolute;
+		}
+
+		.contenido ul li:hover ul li {
+		  display: block;
+		  background-color: #efefef;
+		}
+
+		.contenido ul li:hover ul li:hover {
+		  background-color: #ededed;
+		}
+
+		.contenido .informacion {
+			width: 100%;
+			padding: 20px 50px;
+			font-family: "Open Sans", sans-serif;
+			background-color: rgb(255, 255, 255);
+		}
+
+		.contenido .informacion p {
+		  padding: 10px 0px;
+		}
+
+		.contenido ul {
+		  font-size: 0;
+		  list-style-type: none;
+		}
+
+		a {
+			text-decoration: none;
+			color: red;
+		}
+		
+		button {
+			padding: 3px 15px 5px 15px;
+		}
+		
+	</style>
+</head>
+<body>
+
+	<div class="container">
+		<div class="contenido">
+			<ul>
+				<li><a href="#">Inicio</a></li>
+				<li>Histoty <i class="fa fa-angle-down"></i>
+					<ul>
+						<li><a href="#">Back</a></li>
+						<li><a href="#">Forward</a></li>
+						<li><a href="#">Go</a></li>
+						<li><a href="#">Lenght</a></li>
+					</ul>
+				</li>
+				
+				<li>Autor</li>
+			</ul>
+			<div class="informacion">
+				<p>
+					<button onclick="back()">Back</button>
+				</p>
+				<p>
+					<SCRIpt>
+					Function back(){
+						window.history.back();
+					}
+					</SCRIpt>
+				</p>
+			</div>
+		</div>
+	</div>
+	
+</body>
+</html>

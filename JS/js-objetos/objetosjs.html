@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!--<script src="objetosjs.js"></script>-->
+    <style>
+    p{
+        color: blue;
+        font-size: 30px;
+    }
+
+    .div{
+        width: 200px;
+        height: 200px;
+        background-color: darkslategray;
+        color: aliceblue;
+      font-size: 40px;
+        text-align: center;
+        margin: auto;
+
+
+    }
+    </style>
+</head>
+<body>
+<h3>Eventos En HTML con JS</h3>
+
+<h2>STRINGS</h2>
+<h2>contar cuantas veses se repite una cadena</h2>
+<P id="texto"></P>
+
+
+<script>
+
+var cad1="Lorem ipsum hola dolor";
+var cont=0;
+var posisencont=0;
+for(var i=0;i<cad1.length;i++){
+    var posis = cad1.indexOf("m",posisencont);
+    if(posis>=0){
+        
+        cont++;
+        posisencont=posis+1;
+
+    }
+    
+}
+
+document.getElementById("texto").innerHTML=cont;
+
+
+</script>
+
+
+<hr>
+<br><br>
+<h2>estraer una rango de carancteres con la propíedad "SLICE"</h2>
+<P id="texto2"></P>
+
+<script>
+var cad1="Lorem ipsum hola dolor";
+var cad2= cad1.slice(0,-5);
+document.getElementById("texto2").innerHTML=cad2;
+</script>
+<hr>
+<br><br>
+<h2>estraer una rango de carancteres con la propíedad "SUBSTRING"</h2>
+<P id="texto3"></P>
+
+<script>
+var cad1="estraer una rango de carancteres con la propíedad \"SUBSTRING\"";
+var cad2= cad1.slice(5,19);
+document.getElementById("texto3").innerHTML=cad2;
+</script>
+
+<hr>
+<br><br>
+<h2>Reemplazar una cadena por otra con el objeto "REPLACE"</h2>
+<P id="texto4"></P>
+
+<script>
+var cad1="Reemplazar una  <b> <i> cadena </i> </b> por otra con el objeto \"REPLACE\"";
+
+var cad2= cad1.replace("cadena", "string");
+document.getElementById("texto4").innerHTML=cad2;
+</script>
+
+
+<hr>
+<br><br>
+<h2>ELIMINA ESPACIOS EN BLANCO"TRIM"</h2>
+<P id="texto5"></P>
+
+<script>
+var cad1="        Reemplazar una  <b> <i> cadena </i> </b> por otra con el objeto \"trim\"             ";
+
+var cad2= cad1.replace("cadena", "string");
+document.getElementById("texto5").innerHTML=cad2;
+</script>
+
+
+<hr>
+<br><br>
+<h2>Extrae un caracter de un texto "charAt" </h2>
+<P id="texto6"></P>
+
+<script>
+var cad1="Extraer una cadena ";
+
+var cad2= cad1.charAt(12);
+document.getElementById("texto6").innerHTML=cad2;
+</script>
+
+
+
+<hr>
+<br><br>
+<h2>Extrae un caracter de un texto "charCodeAt" </h2>
+<P id="texto7"></P>
+
+<script>
+var cad1="Extraer una cadena ";
+
+var cad2= cad1.charCodeAt();
+document.getElementById("texto7").innerHTML=cad1[2];
+</script>
+
+<hr>
+<br><br>
+<h2>Convierte un texto en array \" Split()\"" </h2>
+<P id="texto8"></P>
+
+<script>
+var cad1="Convierte, un, texto, en, array \" Split()\"";
+
+var cad2= cad1.split(",");
+document.getElementById("texto8").innerHTML=cad2[1];
+</script>
+
+
+
+
+
+    <button onclick="alert('Código funcionando'),alert('Código funcionando 2')">preciona aqui</button>
+    <BR></BR>
+    <button onclick="this.innerHTML=Date();">Fecha actual</button>
+
+    <p id="ejemplo"></p>
+
+    <button onclick="escribehtml()">Escribe</button>
+    <button onclick="borrahtml()">borra</button>
+    <script >
+    function escribehtml(){
+
+        document.getElementById("ejemplo").innerHTML="<b>Texto de Prueba</b> <i>a una etiqueta html</i>"
+        
+       
+
+        }
+        function borrahtml(){
+        document.getElementById("ejemplo").innerHTML="";
+        }
+
+    </script>
+
+<h1>onchage</h1>
+Ingrese Un texto: <br>
+<input type="text" name="saludos" prueba="prueba atributo" value="hola" onchange="mifuncion(this.name, this.value)">
+
+<script>
+function mifuncion(prueba, val){
+    alert("el valo es:" +prueba+ val );
+}
+
+
+
+
+</script>
+
+<br>
+<input type="text" id="nombre"> <br>
+<input type="text" id="mayusculas"><br>
+
+<br>
+<input type="text" id="nombre2">
+
+<script>
+function cabiaMayusculas(){
+    var nom=document.getElementById("nombre");
+    nom.value=nom.value.toUpperCase();
+
+}
+
+document.getElementById("nombre").onchange=function(){
+    cabiaMayusculas()
+};
+
+function cabiaMinusculas(){
+    var nom=document.getElementById("nombre");
+    nom.value=nom.value.toLowerCase();
+
+}
+
+document.getElementById("nombre").onchange=function(){
+    cabiaMayusculas()
+};
+
+
+function cabiaMayusculas(){
+    var nom=document.getElementById("nombre2");
+    nom.value=nom.value.toUpperCase();
+
+}
+
+document.getElementById("nombre2").addEventListener("click", cabiaMayusculas){
+    cabiaMayusculas();
+}
+</script>
+
+
+<div class="div" id="ejemplodiv" onmouseover="myOverFunction()">
+Mueve el Mouse
+</div>
+
+<script>
+var x=10;
+function myOverFunction(){
+    document.getElementById("ejemplodiv").innerHTML= x+=5;
+}
+</script>
+
+
+<img 
+src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKgHKJ9XwftS_lKejpekjvduFvz8yfR4M4Rnfpbqjt9loNT7IE" 
+alt=""
+onmouseover="imagenDobleDimension(this)"
+onmouseout="imagenNormal(this)"
+width="120"
+height="120"
+
+>
+
+<script>
+    function imagenDobleDimension(x){
+        x.style.height="240px";
+        x.style.width="240px";
+        
+        
+    }
+    function imagenNormal(x){
+        x.style.height="120px";
+        x.style.width="120px";
+    }
+
+</script>
+<br><br>
+
+<p><h1>onmouseover</h1></p>
+<p
+onmouseover="pasarmouse(this)"
+onmouseout="normal(this)"
+s
+
+
+> Curso FrontEnd</p>
+
+<script>
+    function pasarmouse(p){
+        p.style.color="#aaddcc";
+        p.style.fontSize="40px";
+        p.style.backgroundColor="orange";
+        
+    }
+
+    function normal(p){
+        p.style.color="#000000";
+        p.style.fontSize="20px";
+        p.style.backgroundColor="aliceblue";
+        p.style.textAling="center";
+    }
+</script>
+<p><h1>onkeydown</h1></p>
+
+
+
+</body>
+</html>

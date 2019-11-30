@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Simulacion de dato</title>
+    <style>
+        div{
+            text-align: center;
+            width: 300px;
+            margin: auto;
+        }
+
+        .inlineblock{
+            width: 350px;
+            display: flex;
+        }
+        table{
+            width: 49.90%;
+
+        }
+    </style>
+</head>
+<body>
+    <div >
+        <img id="imgdado" src="img/dado1.png" alt=""><br><br>
+        <button id="b1" onclick="lanzardado(1)">Jugador 1</button>
+        <button id="b2"  onclick="lanzardado(2)">Jugador 2</button>
+        
+        <div class="inlineblock">
+        <table >
+            <thead>
+                <th>Jugada 1 </th>
+            </thead>
+            <tbody>
+                <tr><td>Jugada 1</td><td><span id="a1"></span></td></tr>
+                <tr><td>Jugada 1</td><td><span id="a2"></span></td></tr>
+                <tr><td>Jugada 1</td><td><span id="a3"></span></td></tr>
+                <tr><td>Jugada 1</td><td><span id="a4"></span></td></tr>
+                
+                                                    
+            </tbody>
+            <tfoot>
+                <th>Total </th>
+                <th id="totala">0</th>
+            </tfoot>
+            <table>
+                    <thead>
+                        <th>Jugada 1 </th>
+                    </thead>
+                    <tbody>
+                            <tr><td>Jugada 2</td><td><span id="b1"></span></td></tr>
+                            <tr><td>Jugada 2</td><td><span id="b2"></span></td></tr>
+                            <tr><td>Jugada 2</td><td><span id="b3"></span></td></tr>
+                            <tr><td>Jugada 2</td><td><span id="b4"></span></td></tr>
+                                                            
+                    </tbody>
+                    <tfoot>
+                        <th>Total </th>
+                        <th id="totalb">0 </th>
+                    </tfoot>
+        </div>
+
+       
+    </div>
+    <div>
+            <p id="ganador"></p>
+
+            <button id="reset" onclick="reiniciar()" >Volver a Jugar</button>
+    </div>
+    
+    <script>
+        
+        reset.disabled=true;
+        var imagenes = new Array();
+        imagenes[0]="img/dado1.png";
+        imagenes[1]="img/dado2.png";
+        imagenes[2]="img/dado3.png";
+        imagenes[3]="img/dado4.png";
+        imagenes[4]="img/dado5.png";
+        imagenes[5]="img/dado6.png";
+
+            var contador1=0;
+            var contador2=0;
+
+            var jugador1=0;
+            var jugador2=0 ;
+          
+            var resultado=0;
+            var resultado2=0;
+        function lanzardado(njugador){
+           
+         
+           
+            switch (njugador) {
+                case 1: 
+                contador1++;
+
+                if(contador1 <= 4){
+                resultado=Math.round(Math.random()*5);
+                imgdado.src=imagenes[resultado];            
+                eval("a"+contador1+".innerHTML=" + ( resultado +1)) ;
+                totala.innerHTML=parseInt(totala.innerHTML)+resultado+1;
+                                   
+                }
+               
+                break;
+
+                case 2: 
+
+                contador2++;
+                if(contador2 <= 4){
+                
+                resultado2=Math.round(Math.random()*5);
+                imgdado.src=imagenes[resultado2];            
+                eval("b"+contador2+".innerHTML=" + ( resultado2 +1)) ;
+                totala.innerHTML=parseInt(totala.innerHTML)+resultado2+1;
+               
+                }
+                break;
+            
+                
+            }
+            
+         if(contador1==4 && contador2==4){
+             if(parseInt(totala.innerHTML)>parseInt(totalb.innerHTML)){
+                ganador.innerHTML="el  Jugador 1 es el ganador";
+             }else if(parseInt(totala.innerHTML)<parseInt(totalb.innerHTML)){
+                ganador.innerHTML="el  Jugador 2 es el ganador";  
+
+             }else{
+                ganador.innerHTML="EMPATE";
+             }
+         }
+
+
+        }
+
+        function reiniciar(){
+            b1.disabled=false;
+            b2.disabled=false;
+
+            contador2=0;
+            contador1=0;
+
+            a1.innerHTML=0;
+            a2.innerHTML=0;
+            a3.innerHTML=0;
+            a4.innerHTML=0;
+            
+            b4.innerHTML=0;
+            b4.innerHTML=0;
+            b4.innerHTML=0;
+            b4.innerHTML=0;
+
+            toatala.innerHTML=0;
+            toatalb.innerHTML=0;
+
+            reset.disabled= true;
+
+        }
+    </script>
+</body>
+</html>

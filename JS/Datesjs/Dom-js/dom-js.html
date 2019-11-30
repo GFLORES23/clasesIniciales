@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <ul>
+            <li>Inicio</li>
+            <li>Contatos</li>
+            <li>Productos</li>
+        </ul>
+    </header>
+
+
+    <section>
+        <h2>Inicio</h2>
+        <p>
+    </section>
+
+    <form id="formulario" action="#">
+            Nombre:<input type="text" name="nombre" ><br>
+            Email:<input type="email" name="email" placeholder="@ejemplo.com"><br>
+            <br><br>
+    
+            <button value="">Iniciar</button>
+
+            <br><br>
+          
+    
+        </form>
+        <button onclick="copiarelementos()">Copiar Elemntos</button>
+
+        <button onclick="clonarformulario()">Clonar</button>
+    </p>
+
+
+
+    <hr>
+    <h2>Ejercicio 2 clonar y dar stylo</h2>
+
+        <section class="titulos">
+        <h1>Titulo H1</h1>
+        <h2>Titulo H2</h2>
+        <h3>tTULO H3</h3>
+        <h4>Ttulo H4</h4>
+        <h5>Tutlo H5</h5>
+        <h6> Titulo H6</h6>
+        <br><br>
+        <button onclick="cambiarcolor()">Cambiar Color</button>
+  </section>
+
+  <script>
+  cambiarcolor=()=>{
+
+      var titulos=document.getElementsByClassName("titulos")[0];
+      var c1=Math.ceil(Math.random()*255).toString(16);
+      var c2=Math.ceil(Math.random()*255).toString(16);
+      var c3=Math.ceil(Math.random()*255).toString(16);
+
+      h1s = document.getElementsByTagName("h1");
+      for(var i=0;i<h1s.length;i++){
+          h1s[i].style.color="#"+c1 ,c2, c3  ;
+      }
+      h2s = document.getElementsByTagName("h2");
+      for(var i=0;i<h2s.length;i++){
+          h2s[i].style.color="green";
+      }
+  
+  h3s = document.getElementsByTagName("h3");
+      for(var i=0;i<h3s.length;i++){
+          h3s[i].style.color="yellow";
+      }
+  
+  h4s = document.getElementsByTagName("h4");
+      for(var i=0;i<h4s.length;i++){
+          h4s[i].style.color="orange";
+      }
+  
+  }
+  
+  </script>
+
+
+<hr>
+<h2>Ejercicio 3 </h2>
+
+<div id="ejemplo1">
+
+    <p>
+        Primero parrafo
+    </p>
+    <p>
+        Segundo Parrafo
+    </p>
+
+</div>
+<button onclick="agregarparrafo()">Agrgar Parrafo</button>
+<script>
+
+agregarparrafo=()=>{
+    var p= document.createElement("p");
+    var texto=document.createTextNode("Parrafo creado con js");
+    p.appendChild(texto);
+    document.getElementsByTagName("div")[0].appendChild(p);
+
+
+    var table=document.createElement("table");
+    var thead=document.createElement("thead");
+    var tr=document.createElement("tr");
+    var th=document.createElement("th");
+
+    table.appendChild(thead);
+    thead.appendChild(tr);
+    tr.appendChild(th);
+    tr.appendChild(th);
+    tr.appendChild(th);
+    tr.appendChild(th);
+    tr.appendChild(th);
+    th.appendChild(document.createTextNode("Hola"));
+    table.style.border="2px solid red";
+    document.getElementsByTagName("div")[0].appendChild(table);
+
+
+
+
+}
+</script>
+<hr>
+<hr>
+<h2>Ejercicio APPEND.BEFORE </h2>
+
+<div id="ejemplo1">
+
+    <p class="parrafo2">
+        Primero parrafo
+    </p>
+    <p>
+        Segundo Parrafo
+    </p>
+
+</div>
+<button onclick="agregarparrafo()">insertbefore</button>
+<script>
+
+agregarparrafo=()=>{
+    var p= document.createElement("p");
+    var texto=document.createTextNode("Parrafo creado con js");
+    p.appendChild(texto);
+    document.getElementsByTagName("div")[0].appendChild(p);
+    
+
+    p2=document.createElement("p");
+    texto2=document.createTextNode("parrafo InsetBefore");
+    p2.appendChild(texto2);
+    var parrafo2 = document.getElementsByClassName('parrafo2')[0];
+    p2.insertBefore(p2,parrafo2);
+
+
+
+
+}
+</script>
+
+    <footer>
+        <p id="fecha"></p>
+    </footer>
+
+
+
+
+
+
+<script>
+clonarformulario=()=>{
+    document.getElementsByTagName("header")[0].innerHTML = document.getElementsByTagName("form")[0].innerHTML;
+}
+</script>
+
+
+    <script>
+            copiarelementos=()=>{
+                var elem1="";
+                var aformularios = document.getElementsByTagName("form")[0];
+                for(i = 0;i < aformularios.length ; i++){
+                    elem1= elem1 +" "+ aformularios[i].name +" " +aformularios[i].value +"<br>";
+                }
+                document.getElementsByTagName("header")[0].innerHTML=elem1;
+              
+            }
+        </script>
+        
+
+
+
+
+    <script>
+    var fechactual= new Date();
+    var meses=["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Setiembre","Octubre","Noviembre","Diciembre",]
+    var fecha="Cajamarca "+fechactual.getDate()+" de "+ meses[(fechactual.getMonth() )] + " del " + fechactual.getFullYear();
+        document.getElementsByTagName("footer")[0].innerHTML=fecha;
+        
+    </script>
+
+
+
+
+
+
+
+<!--
+
+    
+-->
+</body>
+</html>

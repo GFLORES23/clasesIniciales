@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <p id="texto"></p>
+    <script>
+     class Persona{
+        constructor(dni,paterno,materno,nombre){
+           this._dni='';
+           this._paterno='';
+           this._materno='';
+           this._nombre='';
+        }
+        get paterno(){
+            return this._paterno;
+        }
+        set paterno(x){
+            this._paterno=x;
+        }
+
+        get materno(){
+            return this._materno;
+        }
+        set materno(x){
+            this._materno=x;
+
+        }
+
+        get nombre(){
+            return this._nombre;
+        }
+        set nombre(x){
+            this._nombre=x;
+
+        }
+
+      
+     }   
+ 
+
+persona= new Persona();
+persona.nombre="Gilberto";
+persona.materno="Villanueva";
+persona.paterno="Flores";
+
+
+texto.innerHTML=persona.paterno +" "+persona.materno+" "+persona.nombre;
+  
+   
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h2>---------ARRAYS---------</h2>
+    <p id="demo"></p>
+
+    <br>
+    
+    <script>
+    
+    
+    var persona=[
+      "juan",
+      12
+    ]
+   
+    var numero=[];
+
+    
+    var meses=["Enero","Febrero","Marzo","Abril",persona];
+    meses[9]=8;
+    text="<ul>";
+   
+    for(var i=0 ;i<=10;i++){
+        text+="<li>"+meses[i]+"</li>";
+        
+    }
+    text+="</ul>";
+    
+
+    //document.getElementById("demo").innerHTML=meses[4];
+    //document.getElementById("demo").innerHTML=persona["nombre"];
+    //document.getElementById("demo").innerHTML=meses.length;
+    //document.getElementById("demo").innerHTML=text;
+    document.getElementById("demo").innerHTML=Array.isArray(meses);
+</script>
+
+<hr>
+<h4>Metodo PUSH >>> Agrega un elemnto al final</h4>
+
+<br>
+<h3>---------CONCAT----------</h3>
+
+
+<p id="textoconcat"></p>
+
+
+<script>
+var frutas1 =["fresa","Naranja"];
+var frutas2=["Manzana","Mango"];
+var frutas3=["Pera","Uvas","Lucma"];
+var frutas =frutas1.concat("<br>",frutas2,"<br>",frutas3);
+document.getElementById("textoconcat").innerHTML=frutas;
+</script>
+
+</body>
+</html>

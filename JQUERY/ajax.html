@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <script src="/transformaciones/JQUERY/jquery-3.4.1.js"></script>
+  </head>
+  <body>
+    <h3>Ejemplo Ajax</h3>
+    <div>
+        <input type="text" placeholder="nombre">
+      <button>post</button>
+      <div></div>
+    </div>
+  </body>
+  <script>
+    $(document).ready(function() {
+      $("button").click(function() {
+        var url = "http://46.101.186.138/softwaregestionerp/datos.php";
+
+        var nombre = $("input").val().toUpperCase();
+        $.post(url, {nombre:nombre }, function(data) {
+          $("div").html(data);
+        }).done(function(){
+            alert("Funcion done()");
+        }).fail(function(){
+           
+                alert("function fail");
+        }).always(function(){
+            alert("funcion always");
+        });
+      });
+    });
+  </script>
+</html>

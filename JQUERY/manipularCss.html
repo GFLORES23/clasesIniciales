@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <script src="jquery-3.4.1.js"></script>
+    <style>
+        .blue {
+            color: blue;
+        }
+
+        .red {
+            color: red;
+        }
+
+        .importante {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        li>span {
+            background-color: black;
+            color: lightblue;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Titulo H1</h1>
+    <H2>Sub Titulo</H2>
+
+    <p>Primero parrafo</p>
+    <p>Segundo parrafo</p>
+    <button>addclass</button>
+
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                $("h1,h2, p")
+                    .addClass("blue")
+                    .addClass("importante")
+                    .slideUp(2500)
+                    .slideDown(2500, function () {
+                        $(this)
+                            .removeClass("blue")
+                            .toggleClass("importante");
+                    });
+            });
+        });
+    </script>
+
+    <hr />
+    <h3>---PARENT----</h3>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>
+            3
+            <div>
+                <ul>
+                    <li>a</li>
+                    <li>
+                        b
+                        <ul>
+                            <li class="uno">uno</li>
+                            <li class="dos">dos , tres , <span>cuatro</span></li>
+                        </ul>
+                    </li>
+                    <li>c</li>
+                    <li>d</li>
+                </ul>
+            </div>
+        </li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <button id="parent">parent()</button>
+    <script>
+        $(document).ready(function () {
+            $("#parent").click(function () {
+                var elemento = $("li > span");
+                elemento.parentsUntil("div")
+                    .slideUp(2500)
+                    .slideDown(1500, function () {
+                        $(this).css({ "color": "blue" });
+                    });
+            });
+        });
+    </script>
+
+</body>
+
+</html>

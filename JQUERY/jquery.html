@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <title>Jquery</title>
+<script src="jquery-3.4.1.js"> </script>
+<style>
+#resaltado{
+    color: blue;
+}
+.resaltado{
+    color: blueviolet;
+}
+div{
+    background-color: blue;
+    height: 80px;
+    width: 80px;
+    margin: 5px;
+    display: inline-block;
+}
+</style>
+<script >
+$(document).ready(function(){
+
+    $("button").click(function(){
+        $("boton1").hide();
+
+    })
+    /*$("#boton2").click(function(){
+        $("#resaltado").hide();
+        
+    })
+    $("#boton3").click(function(){
+        $(".resaltado").hide();
+        
+    })*/
+    
+
+
+});
+
+</script>
+
+</head>
+
+<body>
+    <h2>Ocultar parrafos</h2>
+ <p id="resaltado">Mi primer parrafo</p>   
+ <p class="resaltado"> Mi segundo parrafo</p>   
+ <p>Mi segundo parrafo</p>   
+
+ <button id="boton1">TODO</button>
+ <button id="boton2">ID</button>
+ <button id="boton3">CLASE</button>
+ <script>
+     $(function(){
+        $("#boton1").click(function(){
+            $("p").hide();
+        });
+        $("#boton2").click(function(){
+            $("#resaltado").hide();
+        });
+        $("#boton3").click(function(){
+            $(".resaltado").hide();
+        })
+     });
+ </script>
+
+
+
+ <hr>
+ <h2>Ejercicio 2 Oculartar Dv con clase hidden</h2>
+<div class="hidden" id="caja1"></div>
+<div class="hidden" id="caja2"></div>
+<div class="hidden" id="caja3"></div>
+<div class="show"></div>
+<br>
+<button id="botondiv">Ocultar div</button>
+
+<script>
+   $(function(){
+        $("#botondiv").click(function(){
+            $(".hidden").hide();
+        });
+        
+        $(".show").mouseenter(function(){
+            alert("Entraste a la caja");
+          
+        }).mouseleave(function(){
+            alert("Dejaste la  caja");
+        });
+        
+        $("#caja2").mousedown(function(){
+            alert("Presionaste en click en la caja");
+        }).mouseup(function(){
+            alert("Dejate de presionar el click en la caja");
+        }).hover(function(){
+          $(this).css({"background-color":"red"  , "width":"120px","height": "120px"})  ;
+        },function(){
+          $(this).css({"background-color":"blue" , "width":"80px","height": "80px" })  ;
+        });
+      
+
+
+   });
+
+
+</script>
+
+<hr>
+<h2>Ejercicio  Oculartar primer elemento</h2>
+<ul class="ul1">
+    <li>Perú</li>
+    <li>Brazil</li>
+    <li>Argentina</li>
+    <li>Mexico</li>
+    <li>Colombia</li>
+</ul>
+<ul class="ul2">
+        <li>Perú</li>
+        <li>Brazil</li>
+        <li>Argentina</li>
+        <li>Mexico</li>
+        <li>Colombia</li>
+    </ul>
+<br>
+<button id="botondiv1">Ocultar div</button>
+
+<script>
+  $(function(){
+       $("#botondiv1").click(function(){
+           $(".ul1 li:first").hide();
+       });
+  });
+</script>
+
+<hr>
+<h2>Ejercicio 5 Ocultar enlaces</h2>
+<p>
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus asperiores commodi molestias sunt repellat fugit ad <a href="" target="_blank"> cumque rem numquam</a>, natus dicta maxime error iusto quas exercitationem possimus, maiores veritatis voluptates.
+    Lorem<a href=""> cumque rem numquam</a> ipsum dolor sit amet consectetur adipisicing elit. Ratione saepe omnis consectetur<a href="" target="_blank"> cumque rem numquam</a> perspiciatis vitae recusandae consequuntur magni dolores sequi. Tempora totam dicta maiores<a href="" target="_blank"> cumque rem numquam</a> voluptates, error exercitationem <a href="" > cumque rem numquam</a>rem ipsum praesentium placeat?
+</p>
+<br>
+<button id="botontarget">Ocultar link</button>
+
+<script>
+
+  $(function(){
+       $("#botontarget").click(function(){
+           $("a[target='_blank']").hide();
+       });
+  });
+
+
+</script>
+
+
+<hr>
+<h2>Ejercicio 6 Ocultar botones</h2>
+<button class="hide">Boton1</button>
+<button class="hide">Boton2</button>
+<button class="hide">Boton3</button>
+<button class="hide">Boton4</button>
+<button class="hide">Boton5</button>
+<button class="hide">Boton6</button>
+
+<br>
+
+
+<script>
+  $(function(){
+       $(".hide").click(function(){
+           $(".hide").hide();
+           $(this).show();
+       });
+
+       $(".hide").dblclick(function(){
+        $(this).hide();
+       });
+  });
+
+
+</script>
+
+
+<hr>
+<br>
+<h2>----focus() and blur()------</h2>
+
+<input type="text">
+<script>
+$(function(){
+    $("input").focus(function(){
+        $("input").css("background-color","yellow");
+    }).blur(function(){
+        $("input").css("background-color","green");
+    });
+})
+</script>
+
+
+</body>
+</html>

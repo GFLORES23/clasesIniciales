@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="/transformaciones/JQUERY/jquery-3.4.1.js"> </script>
+    <title>Document</title>
+    <style>
+        div img{
+            width: 122px;
+            height: 80px;
+            opacity: 0.25;
+        }
+        #imgAnimada{
+            width: 500px;
+            height: 380px;
+            
+        }
+    </style>
+</head>
+<body>
+  
+            <img src="imagen0.png" alt="" id="imgAnimada">
+    
+    <div id="imagenes">
+    <img src="imagen0.png" alt="">
+    <img src="imagen1.png" alt="">
+    <img src="imagen2.png" alt="">
+    <img src="imagen3.png" alt="">
+</div>
+</body>
+
+<script>
+$(document).ready(function(){
+    var contador = 1;
+    var imagenes= new Array();
+
+    imagenes[0]="imagen0.png";
+    imagenes[1]="imagen1.png";
+    imagenes[2]="imagen2.png";
+    imagenes[3]="imagen3.png";
+
+    setInterval(cambiarImagen,4000);
+    function cambiarImagen(){
+        
+        contador++;
+        $("#imgAnimada").fadeOut(1000).fadeIn(3000)     ;
+        $("#imgAnimada").attr("src",imagenes[contador]);
+        if(contador==4){
+            contador=-1;
+            
+           
+        }
+
+
+    }
+});
+</script>
+</html>

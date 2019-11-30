@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Objeto Math</title>
+</head>
+<body>
+
+    <h3>Cambiar de base a un número</h3>
+<p id="texto"></p>
+
+    <script>
+        var numero = 8;
+
+        var convertido="";
+        convertido += "> Base decimal: " + numero+"</br></br>";
+        convertido += "> Hexadecimal: " + numero.toString(16)+"</br>";
+        convertido += "> Ocatal: " + numero.toString(8)+ "</br>";
+        convertido += "> Base 6: " + numero.toString(6)+ "</br>";
+        convertido += "> Binario: " + numero.toString(2)+ "</br>";
+        convertido += "> Base 36: " + numero.toString(36)+ "</br>";
+        
+        var numrand="";
+        numrand += Math.floor( Math.random()*255 ).toString(2) +"<br>";
+        numrand += Math.floor( Math.random()*255 ).toString(2) +"<br>";
+        numrand += Math.floor( Math.random()*255 ).toString(2)+"<br>";
+        numrand += Math.floor(  Math.random()*255).toString(2) +"<br>";
+        numrand += Math.floor(  Math.random()*255 ).toString(2) +"<br>";
+
+        
+       document.getElementById("texto").innerHTML= Math.pow(36,(1/3));
+
+        </script>
+
+        <hr>
+        <h2>---Ejercicios---</h2>
+
+        <h3>area de un cuadrado</h3>
+        <p id="cuadrado"></p>
+        <script>
+            var altura=200;
+            var base = 200;
+            document.getElementById("cuadrado").innerHTML= base*altura
+           
+        </script>
+
+        <hr>
+        <h3>area de un cuadado y un circulo</h3>
+
+        <p id="cuadradoycirculo"></p>
+        <p id="circulo"></p>
+        <script>
+            var altura=200;
+            var base = 200;
+            var radio = 100*2;
+            document.getElementById("cuadradoycirculo").innerHTML= (10000-((Math.PI*10000)/4))*4;
+           
+</script>
+        <hr>
+        <h3>area de un circulo</h3>
+
+        <p id="circulos"></p>
+       
+        <script>
+            var altura=200;
+            var base = 200;
+            var radio = 100*2;
+            document.getElementById("circulos").innerHTML= (Math.PI * Math.pow(100,2)) - (5*(Math.PI * Math.pow(altura/6,2)) );
+           
+</script>
+        <hr>
+        <h3>area de un circulo pequeño</h3>
+
+        <p id="circulosp"></p>
+       
+        <script>
+            var altura=200;
+            var base = 200;
+           
+            document.getElementById("circulosp").innerHTML= Math.PI*(Math.sqrt(2)-1)/8;
+           
+</script>
+        <hr>
+
+
+        <h3>area de un ecuacion</h3>
+
+        <p id="ecuacion"></p>
+       
+        <script>
+            //https://matematicasn.blogspot.com/2016/01/areas-de-regiones-sombreadas-ejercicios.html
+            var x=200;
+           
+            document.getElementById("ecuacion").innerHTML= 3*x + (3/3)*((x-5) + ((3*x) /2));
+           
+</script>
+        <hr>
+
+</body>
+</html>

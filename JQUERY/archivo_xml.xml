@@ -1,0 +1,27 @@
+<datos>
+    <alumno>
+        <nro>1</nro>
+        <Nombre>Juan Perez</Nombre>
+        <celular>010203201</celular>
+    </alumno>
+    <alumno>
+        <nro>1</nro>
+        <Nombre>Juan Perez</Nombre>
+        <celular>010203201</celular>
+    </alumno>
+</datos>
+
+
+{
+    "datos":{
+        "alumno":{
+            "nro":"01",
+            "nombre":"Juan Perez",
+            "celular":"01020145",
+            "curso":{
+                "nombre":"Matematica",
+                "nota":"20"
+            }
+        }
+    }
+}

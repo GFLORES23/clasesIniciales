@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		
+	function Persona(nombre, dni, email, telefono){
+		this.nombres=nombre;
+		this.dni=dni;
+		this.email=email;
+		this.telefono=telefono;
+	}
+	Persona.prototype.masdato=function(){
+		this.nombres+  " "+this.dni;
+	}
+
+	var person1=new Persona("Juan","124521","@gmail","4578451");
+	var person2=new Persona("Juan2","15521","@gmail.com","4521");
+
+		document.write(person1.nombres + "<br>" + person2.dni);
+	</script>
+<hr>
+<h2>Listar propiedades</h2>
+<script>
+	var Persona ={
+		nombre:"Juan",
+		dni:"dni",
+		celular:"457845",
+		direccion:"micasa",
+};
+document.write(Object.getOwnPropertyNames(Persona));
+</script>
+
+<hr>
+<h3>Ejercicios</h3>
+
+
+<input id="r1" type="radio" name="op" onclick="alert('opcion 1')">Opcion 1
+<input id="r2" type="radio" name="op" onclick="alert('opcion 2')">Opcion 2
+
+<br>
+<br>
+
+<hr>
+
+<input type="text" id="txt1" ><br>
+<input type="text" id="txt2" ><br>
+<input type="text" id="txt3" onchange="comparar(this)" onchange="comparar"><br>
+<script>
+
+function comparar(){
+		var numero = [];
+	 numero[0] = parseInt(document.getElementById("txt1").value);
+	 numero[1] = parseInt(document.getElementById("txt2").value);
+	 numero[2] = parseInt(document.getElementById("txt3").value);
+
+	var nmenor=1;
+	var nmayor=0;
+	for(var i = 0;i<numero.length;i++){
+		if(nmayor < parseInt(numero[i])){
+			nmayor= parseInt(numero[i]);
+		}
+	}
+
+	alert("Numero Mayor :" +nmayor + " Numero Menor :"+nmenor);
+}
+
+</script>
+
+
+<hr>
+
+<h2>ejercicio 3</h2>
+<input type="text" min="0"  max ="100" step="1" id="numero" name="numero">
+<button onclick="convertiraletras()" >Convertir</button>
+<br><br>
+<p id="letras">
+convertido
+</p>
+<script>
+
+
+function numerounoadiesinueve(numero){
+	var cadena="";
+	switch (parseInt(numero)){
+
+		case 1:	cadena="uno"; break;
+		case 2:	cadena="dos"; break;
+		case 3:	cadena="tres"; break;
+		case 4:	cadena="cuatro"; break;
+		case 5:	cadena="cinco"; break;
+		case 6:	cadena="seis"; break;
+		case 7:	cadena="siete"; break;
+		case 8:	cadena="ocho"; break;
+		case 9:	cadena="nueve"; break;
+		case 10:	cadena="Dies"; break;
+		case 12:	cadena="Doce"; break;
+		case 13:	cadena="trese"; break;
+		case 14:	cadena="catorse"; break;
+		case 15:	cadena="quince"; break;
+		case 16:	cadena="diesiseis"; break;
+		case 17:	cadena="siesisiete"; break;
+		case 18:	cadena="diesiocho"; break;
+		case 19:	cadena="diesinueve"; break;
+		}
+		return cadena;
+}
+
+function decenas(numero){
+	var cadenadec="";
+	switch (numero){
+
+		case 20:	cadenadec="Veinte"; break;
+		case 30:	cadenadec="Treinta"; break;
+		case 40:	cadenadec="Cuarenta"; break;
+		case 50:	cadenadec="Cincuenta"; break;
+		case 60:	cadenadec="Sesenta"; break;
+		case 70:	cadenadec="Setenta"; break;
+		case 80:	cadenadec="Ochenta"; break;
+		case 90:	cadenadec="Noventa"; break;
+
+	}
+	return cadenadec;
+}
+
+function convertiraletras(){
+	var cadenaNum="";
+	var numero= parseInt(document.getElementById("numero").value);
+		
+	if( numero < 20){
+		cadenaNum=numerounoadiesinueve(numero);
+	}else{
+		 decena = Math.floor(numero / 10);
+		 cadenaNum = decenas(decena * 10);
+		
+		 unidades = numero % 10;
+		if(unidades > 0){
+			cadenaNum = cadenaNum + " y " + numerounoadiesinueve(unidades);
+		}
+
+	}
+
+
+	document.getElementById("letras").innerHTML=cadenaNum;
+
+	
+
+
+
+
+
+
+
+}
+</script>
+
+
+
+</body>
+</html>

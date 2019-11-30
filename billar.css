@@ -1,0 +1,358 @@
+.mesa{
+    width: 500px;
+    height: 650px;
+    background-color: rgb(17, 63, 212);
+    border: 25px solid rgb(2, 3, 12);
+    border-radius: 40px;
+    position: relative;
+}
+.hoyo1{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+   background-color: black;
+   top: -10px;
+   left: -10px;
+   position: absolute;
+   border: 2px solid rgb(17, 63, 212);;
+
+}
+.hoyo2{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+   background-color: black;
+   top: -10px;
+   left: 460px;
+   position: absolute;
+   border: 2px solid rgb(17, 63, 212);;
+
+}
+.hoyo3{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+   background-color: black;
+   top: 300px;
+   left: -10px;
+   position: absolute;
+   border: 2px solid rgb(17, 63, 212);;
+
+}
+.hoyo4{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+   background-color: black;
+   top: 300px;
+   left: 460px;
+   position: absolute;
+   border: 2px solid rgb(17, 63, 212);;
+
+}
+.hoyo5{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+   background-color: black;
+   top: 605px;
+   left: -10px;
+   position: absolute;
+   border: 2px solid rgb(17, 63, 212);;
+
+}
+.hoyo6{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+   background-color: black;
+   top: 605px;
+   left: 460px;
+   position: absolute;
+   border: 2px solid rgb(17, 63, 212);;
+
+}
+
+
+.bord1{
+    margin: auto;
+    width: 85%;
+    height: 30px;
+    background-color: rgb(11, 11, 139);
+    border-radius: 0 0 50px 50px;
+    box-shadow: 0px 3px 5px rgb(2, 2, 5);
+
+}
+.bord2{
+    position: absolute;
+    width: 30px;
+    height: 270px;;
+    background-color: rgb(11, 11, 139);
+    border-radius: 0px 50px 50px 0px;
+    top: 35px;
+    left: 0px;
+    box-shadow: 3px 0px 5px rgb(2, 2, 5);
+}
+.bord3{
+    position: absolute;
+    width: 30px;
+    height: 260px;
+    background-color: rgb(11, 11, 139);
+    border-radius: 0px 50px 50px 0px;
+    top: 348px;
+    left: 0px;
+    box-shadow: 3px 0px 5px rgb(2, 2, 5);
+}
+.bord4{
+    position: absolute;
+    width: 30px;
+    height: 270px;;
+    background-color: rgb(11, 11, 139);
+    border-radius: 50px 0px 00px 50px;
+    top: 35px;
+    left: 470px;
+    box-shadow: -3px 0px 5px rgb(2, 2, 5);
+    
+}
+.bord5{
+    position: absolute;
+    width: 30px;
+    height: 260px;;
+    background-color: rgb(11, 11, 139);
+    border-radius: 50px 0px 00px 50px;
+    top: 348px;
+    left: 470px;
+    box-shadow: -3px 0px 5px rgb(2, 2, 5);
+    
+}
+.bord6{
+    position: absolute;
+    margin: auto;
+    width: 85.5%;
+    height: 30px;
+    background-color: rgb(11, 11, 139);
+    border-radius: 50px 50px 0px 0px;
+    bottom: 0;
+    left: 38px;
+    box-shadow: 0px -3px 5px rgb(2, 2, 5);
+}
+.bola1, .bola2,.bola3,.bola4,.bola5{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 30px;
+    position: absolute;
+    
+}
+
+.bola1{
+    top: 200px;
+    left: 45%;
+    background-color: rgb(240, 236, 13);
+
+    animation-name: bola1;
+    animation-duration: 4s;
+    animation-timing-function: linear;
+    animation-iteration-count: 4;
+    animation-delay: 1.5s;
+    position: absolute;
+}
+ ..bola2{
+   
+     background-color: rgb(230, 44, 44);
+    top: 165px;
+    left: 245px;
+
+    animation-name: bola2;
+   animation-duration: 4s;
+   animation-timing-function: linear;
+   animation-iteration-count: 4;
+   animation-delay: 2s;
+   position: absolute;
+       
+}
+..bola3{
+    
+    background-color: rgb(61, 230, 97);
+    top: 165px;
+   left: 205px;
+ 
+   animation-name: bola3;
+   animation-duration: 4s;
+   animation-timing-function: linear;
+   animation-iteration-count: 4;
+   animation-delay: 2s;
+   position: absolute;
+   
+}
+..bola4{
+    background-color: rgb(252, 4, 219);
+    top: 130px;
+    left: 45%;
+
+    animation-name: bola4;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: 4;
+    animation-delay: 2s;
+    position: absolute;
+
+    
+    
+}
+.bola5{
+   
+    background-color: rgb(0, 0, 0);
+     color: aliceblue;
+    top: 500px;
+    left: 220px;
+
+    animation-name: bola5;
+   
+    animation-duration: 7s;
+    animation-timing-function: linear;
+    animation-iteration-count: 4;
+    animation-delay: 1s;
+    
+}
+
+
+@keyframes bola1{
+    0%{
+        top: 200px;
+    left: 45%;
+    }
+    0%{
+        top: 200px;
+    left: 45%;
+    }
+    25%{
+        top: 25px;
+        left: 60%;
+        
+    }
+    60%{
+        top: 605px;
+        left: 460px;
+     }
+
+     100%{
+        top: 605px;
+        left: 460px;
+     }
+}
+
+
+@keyframes bola2{
+    0%{
+        top: 165px;
+        left: 245px;
+    }
+    50%{
+        top: -10px;
+   left: 460px;
+    }
+    100%{
+        top: -10px;
+   left: 460px;
+    }
+}
+@keyframes bola3{
+    0%{
+        top: 165px;
+        left: 205px;
+    }
+    50%{
+        top: 5px;
+        left: 5px;
+        
+    }
+    100%{
+        top: 5px;
+        left: 5px;
+        
+    }
+}
+
+@keyframes bola4{
+    0%{
+        top: 101px;
+        left: 45%;
+    }
+    15%{
+        top: 25px;
+        left: 40%;
+        
+    }
+    35%{
+        top: 330px;
+       left: 40px;
+       
+       
+    }
+    50%{
+        top: 330px;
+       left: 40px;
+      
+       
+    }
+
+      80%{
+        top: 310px;
+        left: -2px;
+        background-color: rgb(252, 4, 219);
+     }
+     100%{
+        top: 310px;
+        left: -2px;
+        background-color: black;
+        color: black;
+     }
+}
+
+@keyframes bola5{
+0%{
+    top: 500px;
+    left: 220px;
+}
+10%{
+    top: 235px;
+    left: 45%;
+    
+   
+}
+20%{
+    top: 590px;
+   left: 150px;
+   
+   
+}
+30%{
+    top: 400px;
+   left: 20px;
+   
+   
+}
+40%{
+    top: 320px;
+   left: 100px;
+   
+   
+}
+65%{
+    top: 310px;
+    left: 470px;
+   
+   
+}
+100%{
+    top: 310px;
+    left: 470px; 
+    background-color: black;
+    color: black;
+    
+   
+}
+
+}

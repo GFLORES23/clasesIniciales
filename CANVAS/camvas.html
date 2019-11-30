@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    canvas{
+        background-color: rgb(12, 11, 11);
+    }
+    </style>
+</head>
+<body>
+        <img id="imagen" src="https://upload.wikimedia.org/wikipedia/commons/9/97/Escudo_nacional_del_Per%C3%BA.png" alt="" width="50px">
+    
+    <section>
+            <canvas id="mycanvas"  width:500px;height: 350px;   >El navegar no soporta la etiqueta canvas</canvas>
+    </section>
+    
+    <script>
+        var canvas = document.getElementById("mycanvas");
+        var contexto=canvas.getContext("2d");
+        
+        
+
+
+        var imagen = document.getElementById("imagen");
+
+        var grad = contexto.createLinearGradient(10,10,100,0);
+        grad.addColorStop(0,"red");
+        grad.addColorStop(1,"white");
+        contexto.fillStyle=grad;
+        contexto.fillRect(10,10 ,80,120);
+        
+
+
+        contexto.fillStyle="white";
+        contexto.fillRect(80,10 ,80,120);
+
+        
+        contexto.fillStyle="red";
+        contexto.fillRect(160,10 ,80,120);
+
+        
+        
+        contexto.moveTo(90,10);
+        contexto.lineTo(190,190);
+        contexto.stroke();
+
+        
+
+
+        contexto.beginPath();
+        contexto.arc(125,70, 30, 0, 2*Math.PI);
+        contexto.strokeStyle ="red";
+        contexto.fillStyle="red";
+        contexto.fill();
+        contexto.stroke();
+
+
+        contexto.drawImage(imagen,(canvas.width/2)-30,(canvas.height/2)-30 ,60,60);
+        imagen.style.display="none";
+
+
+
+/*
+
+        contexto.fillStyle="blue";
+        contexto.fillRect(90,40 ,60,60);*/
+    </script>
+
+    <br>
+    <hr>
+    <h2>Dibujar circunferencia</h2>
+
+    <section>
+            <canvas id="mycanvas2" width="500px" height = "400px" >El navegar no soporta la etiqueta canvas</canvas>
+    </section>
+   
+    <script>
+        var canvas2 = document.getElementById("mycanvas2");
+        var dibujo=canvas2.getContext("2d");
+
+      
+            dibujo.fillStyle="#f8b500";
+            dibujo.shadowBlur=40;
+            dibujo.shadowColor="white";
+            dibujo.shadowOffsetX=0;
+            dibujo.shadowOffsetY=0;
+            dibujo.arc(150,150,100,0,2*Math.PI,true);  // Crea una línea hasta las nuevas coordenadas
+            dibujo.fill();    
+
+        cntx.fillStyle="blue";
+        cntx.font="50px Arial";
+        cntx.textAlign ="center";
+        cntx.fillText("Hola",canvas2.width/2,canvas2.height/2);
+
+                
+
+    </script>
+
+</body>
+</html>

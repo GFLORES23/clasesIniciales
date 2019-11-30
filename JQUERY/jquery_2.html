@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery-3.4.1.js">
+    google.load("jqueryui", "1.5.2");
+    </script>
+    <script>
+        $(document).ready(function(){
+            $("p").on(
+                {
+                    mouseenter : function(){
+                        $(this).css("background-color","red");
+                    },
+                    mouseleave : function(){
+                        $(this).css("background-color","yellow");
+                    },
+                    click : function(){
+                        $(this).css("color","blue");
+                    },
+                }
+            )
+        });
+        
+    </script>
+
+    <style>
+        
+        div{
+            width: 80px;
+            height: 80px;
+            background-color: blueviolet;
+            display: inline-block;
+        }
+
+        #slide, #panel{
+           width: 100%;
+            border: 1px solid #356845;
+            background-color: teal;
+            color:white;
+            padding: 7px;
+            text-align: center;
+        }
+        #panel{
+            padding: 50px;
+        }
+
+        #box{
+            width: 150px;
+            height: 150px;
+            background-color: rgb(25, 37, 209);
+            border: 1px solid lightseagreen;
+            border-radius: 50%;
+            position: absolute;
+            
+
+            
+        }
+    </style>
+</head>
+<body>
+    <h2>---METODOS----</h2><br>
+    <h1>on()</h1>
+    <p>El sabr no ocupa lugar</p>
+<p>quien no se aventur, no pasa el mar</p>
+<p>A caballo regalado no se le mira en diente</p>
+ 
+
+<hr>
+<h1>hide() - show()</h1>
+<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque, a vel. Facere enim impedit deleniti minus. Harum minima ex iure optio explicabo delectus soluta sit assumenda dolorum, voluptate id provident.</p>
+<br>
+<button id="hide">Hide</button>
+<button id="show">Show</button>
+<script>
+$(document).ready(function(){
+    $("#hide").on({
+        click :function(){
+            $("p").hide("slow")
+           
+        }
+    });
+    
+    $("#show").on({
+        click : function(){
+            $("p").show("5000",function(){
+                $(this).css("color","red");
+            });
+
+        } 
+    })
+    });
+</script>
+
+<h1>----toggle()--------</h1>
+<p id="ptoggle">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque, a vel. Facere enim impedit deleniti minus. Harum minima ex iure optio explicabo delectus soluta sit assumenda dolorum, voluptate id provident.</p>
+<br>
+<button id="btoggle" >Ocultar</button>
+<script>
+$(document).ready(function(){
+    $("#btoggle").click(function(){
+        $("#ptoggle").toggle(2500,function(){
+            $(this).css("color","orange");
+        });
+    })
+});
+</script>
+
+
+<hr>
+<h1>--fadeOut()---</h1>
+
+<button id="fadeOut">fadeOut -fadeIn - fadeToggle </button><br><br>
+<div id="div1"></div>
+<div id="div2"></div>
+<div id="div3"></div>
+<script>
+        $(document).ready(function(){
+            
+            function aleatorios(){
+                return  Math.ceil(Math.random()*255).toString(16);
+            }
+            $("#fadeOut").click(function(){
+                $("#div1").fadeToggle(function(){
+                    var color = "#"+ aleatorios() +aleatorios()+aleatorios();
+                   $(this).css("background-color",color);
+
+                });
+
+                $("#div2").fadeToggle(function(){
+                    var color = "#"+ aleatorios() +aleatorios()+aleatorios();
+                   $(this).css("background-color",color);
+                });
+
+
+                $("#div3").fadeToggle(function(){
+                    var color = "#"+ aleatorios() +aleatorios()+aleatorios();
+                   $(this).css("background-color",color);
+                });
+            })
+        });
+        </script>
+
+
+<hr>
+<h1>--fadeTo()---</h1>
+
+<button id="fadeTo">fadeTo </button><br><br>
+<div id="ftdiv1"></div>
+<div id="ftdiv2"></div>
+<div id="ftdiv3"></div>
+<script>
+        $(document).ready(function(){
+            
+         
+            $("#fadeTo").click(function(){
+                $("#ftdiv1").fadeTo("fast",0.25);
+                $("#ftdiv2").fadeTo("slow",0.50);
+                $("#ftdiv3").fadeTo(2500,0.75);
+            })
+        });
+        </script>
+
+
+<hr>
+<h1>---slideUp()----</h1>
+
+<div id="slide">El sabr no ocupa lugar
+<img src="flecha-hacia-abajo.png" alt="" style="width: 30px; height:30px;">
+</div>
+<div id="panel" style="display: none;">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius tempora ullam laboriosam eum itaque officiis a corporis fuga repudiandae debitis, obcaecati eveniet assumenda ut ipsum animi! Quasi voluptatem laboriosam voluptatibus!</div>
+
+<script>
+$(document).ready(function(){
+    var contador=0;
+    $("#slide").click(function(){
+        $("#panel").slideToggle(function(){
+            contador++;
+            if(contador%2==0){
+                $("#slide").css("background-color","red");
+            }else{
+                $("#slide").css("background-color","blue");
+            }
+        });
+    });
+});
+</script>
+
+<hr>
+<h1>---animate()----</h1>
+
+<button id="animate">Animate</button><br>
+<button id="stop">Stop</button><br>
+<div id="box"></div>
+
+
+<script>
+$(document).ready(function(){
+    $("#animate").click(function(){
+        var div = $("#box");
+       div.animate({left:"1200px", top:"1000px"});
+       div.animate({left:"1200px", top:"1200px"});
+       div.animate({left:"1200px", top:"1000px"});
+       div.animate({left:"1000px", top:"1000px"});
+    });
+
+    $("#stop").click(function(){
+        $("#box").stop();
+    });
+
+});
+</script>
+</body>
+</html>

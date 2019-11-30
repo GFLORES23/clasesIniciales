@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <p id="texto"></p>
+    <script>
+     class Persona{
+        constructor(dni,paterno,materno,nombre,sueldo){
+           this.dni=dni;
+           this.paterno=paterno.toUpperCase();
+           this.materno=materno.toUpperCase();
+           this.nombre=nombre.toUpperCase();
+        }
+        
+         saludar(){
+            var cadena, hora = new Date();
+
+
+            if(hora.getHours() <12 ){
+                cadena="Buenos dias..."
+            }else if(hora.getHours()<19){
+                cadena="Buenas tardes..."
+            }else{
+                cadena="Buenas noches..."
+            }
+            return cadena + " soy " + this.nombre+" " + this.paterno +" "+ this.materno;
+        }
+
+      
+     }   
+     class Telefono{
+        constructor(){
+            this.numero='';
+            this.operador='';
+            this.persona='';
+        }
+     }
+//heredamos datos de la clase Persona
+     class Empleado extends Persona {
+        constructor(dni,paterno,materno,nombre,sueldo){
+            super(dni,paterno,materno,nombre,sueldo);
+            this.area='';
+            this.cargo='';
+            this.sueldo=sueldo;
+            this.fecha_ingreso='';
+           
+        }
+        saludar(){
+            var cadena='';
+           return cadena + " Hola soy " + this.nombre+" " + this.paterno +" "+ this.materno+" "+"mi suendo es: "+this.sueldo;
+        }
+
+
+
+     }
+
+
+persona= new Persona("45454545","Flores","Villanueva","Gilberto" );
+empleado=new Empleado("11111111","Sanches","Perez","Pedro","100")
+
+  texto.innerHTML=persona.saludar()+"</br></br>" + empleado.saludar();
+  
+   
+    </script>
+
+
+</body>
+</html>

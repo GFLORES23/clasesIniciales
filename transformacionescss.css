@@ -1,0 +1,264 @@
+
+body{
+    padding: 40px;
+}
+.trasform{
+    width: 300px;
+    height: 100px;
+    background-color: red;
+    color: black;
+    /*
+    transform: translate(50px,100px);
+    -ms-transform: translate(50px,100px);
+    -webkit-transform: translate(50px,100px);
+*/
+   /* transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);*/
+    
+    /*animation-name: animacion;
+    animation-duration: 5s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;*/
+
+    transform: scalex(2.4);
+    -ms-transform: scalex(2.4);
+    -webkit-transform: scalex(2.4);
+
+}
+.skewx{
+    width: 300px;
+    height: 100px;
+    background-color: rgb(176, 218, 24);
+    color: black;
+
+    
+    
+    transform: skewy(-20deg);
+    -ms-transform: skewy(-20deg);
+    -webkit-transform: skewy(-20deg);
+    
+}
+.caja{
+    width: 400px;
+    height: 400px;
+    background-color: rgb(223, 241, 120);
+    margin: auto;
+
+}
+.girar{
+    width: 100px;
+    height: 100px;
+    background-color: rgb(176, 218, 24);
+    color: black;
+    position: relative;
+    margin: auto;
+
+    
+
+    
+    
+
+    animation-name: girar;
+    animation-duration: 5s;
+    animation-direction:normal;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    /*transform-origin: 0px 0px;*/
+
+    -webkit-animation-name: girar;
+    -webkit-animation-duration: 5s;
+    -webkit-animation-direction:normal;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    
+    
+}
+@keyframes girar{
+    
+    from{
+        left: 0; top: 0px;
+        transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -webkit-animation-duration: 0.5s;
+        }to{
+        transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        }
+
+
+}
+
+.box{
+    width: 100px;
+    height: 100px;
+    background-color: brown;
+    display: inline-block;
+    
+}
+.dos{
+    width: 100px;
+    height: 100px;
+    background-color: rgb(29, 145, 199);
+    
+    position: relative;
+    top: 20px;
+    left: 20px;
+}
+
+/*RELAVATIVE - ABSOLUTE*/
+.r-a{
+    width: 100px;
+    height: 100px;
+    background-color: rgb(25, 184, 10);
+    
+}
+.relativ{
+
+    width: 400px;
+    height: 200px;
+    background-color: rgb(25, 184, 10);
+    position: relative;
+}
+.absolute{
+
+   
+    border: 2px solid rgb(47, 131, 199);
+    position: absolute;
+    top: 20px;
+    left: 300px;
+}
+
+
+.contenedor{
+    width: 400px;
+    height: 200px;
+    background-color: rgb(25, 184, 10);
+}
+.padre{
+    width: 300px;
+    height: 200px;
+    background-color: rgb(189, 192, 31);
+    padding: 20px;
+
+
+}
+
+.hijo{
+    width: 200px;
+    height: 150px;
+    background-color: rgb(42, 116, 212);
+    position: fixed;
+
+    animation-name: hijo;
+    animation-duration: 5s;
+    animation-direction:normal;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+}
+
+@keyframes hijo{
+    
+    from{
+        
+        
+        -webkit-transform: rotateY(-180deg);
+        
+        }to{
+        
+        -webkit-transform: rotateY(180deg);
+        }
+
+
+}
+
+
+.contenedor2{
+    width: 400px;
+    height: 200px;
+    background-color: rgb(25, 184, 10);
+}
+.padre2{
+    width: 300px;
+    height: 200px;
+    background-color: rgb(189, 192, 31);
+    padding: 20px;
+
+
+}
+
+.hijo2{
+    width: 150px;
+    height: 50px;
+    background-color: rgb(42, 116, 212);
+    position: fixed;
+    transform: rotatez(90deg);
+
+}
+
+.mesa{
+    width: 400px;
+    height: 500px;
+    background-color: rgb(0, 0, 0);
+}
+.bola {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: auto;
+    position: relative;
+    top: 20px;
+
+}
+
+.mesa .uno{
+    position: relative;
+    top:100px;
+    left: 0;
+    background-color: blue;
+
+}
+.mesa .dos{
+    position: relative;
+    top: 100px;
+    left: 0;
+    background-color: rgb(90, 247, 0);
+
+}
+.mesa .tres{
+    position: relative;
+    top: 100px;
+    left: 0;
+    background-color: rgb(255, 40, 11);
+
+}
+
+.mesa .cuatro{
+    position: relative;
+    top: 250px;
+    left: 0;
+    background-color: rgb(20, 87, 14);
+
+}
+
+.es1{
+    width: 50px;
+    height: 50px;
+    border-radius: 0 0 100% 0;
+    background-color: rgb(238, 216, 14);
+    border: 5px solid rgb(88, 86, 86);
+    position: relative;
+}
+
+.es2{
+    width: 50px;
+    height: 50px;
+    border-radius: 0 100% 0 0;
+    background-color: rgb(238, 216, 14);
+    border: 5px solid rgb(88, 86, 86);
+    top: 380px;
+    position: relative;
+}
